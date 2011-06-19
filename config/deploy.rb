@@ -1,3 +1,7 @@
+$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+require 'rvm/capistrano'
+require 'bundler/capistrano'
+
 # the name of your website - should also be the name of the directory
 set :application, "cappy.com"
 
