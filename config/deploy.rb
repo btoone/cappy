@@ -5,7 +5,7 @@ require 'bundler/capistrano'
 # the name of your website - should also be the name of the directory
 set :application, "cappy.com"
 
-set :repository,  "git@github.com/hinosx/cappy.git"
+set :repository,  "git@github-h:hinosx/cappy.git"
 set :branch, "master"
 
 # the name of the deployment user-account on the server
@@ -19,6 +19,9 @@ set :scm, :git
 set :keep_releases, 3
 set :use_sudo, false
 
+# newer version of rvm live in /usr/local/rvm
+set :rvm_bin_path, '/usr/local/rvm/bin'
+
 # Roles
 role :web, "#{application}"
 role :app, "#{application}"
@@ -26,7 +29,6 @@ role :db,  "#{application}"
 
 # Deployment process
 after "deploy:update", "passenger:setup_symlinks"
-after "deploy:migrate"
 
 # Custom deployment tasks
 namespace :passenger do
