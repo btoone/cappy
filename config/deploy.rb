@@ -5,7 +5,7 @@ require 'bundler/capistrano'
 # the name of your website - should also be the name of the directory
 set :application, "cappy.com"
 
-set :repository,  "git@github-h:hinosx/cappy.git"
+set :repository,  "git@github.com:hinosx/cappy.git"
 set :branch, "master"
 
 # the name of the deployment user-account on the server
@@ -18,6 +18,15 @@ set :deploy_to, "/var/www/sites/#{application}"
 set :scm, :git
 set :keep_releases, 3
 set :use_sudo, false
+
+# fetches from local git repo on the server rather then clone repo on each deploy
+set :deploy_via, :remote_cache
+
+# use your private keys to authenticate to server and github
+# set :ssh_options, { :forward_agent => true }
+
+# Prompts for key passphrase, needed when using a deploy key pair instead of agent forwarding
+default_run_options[:pty] = true
 
 # newer version of rvm live in /usr/local/rvm
 set :rvm_bin_path, '/usr/local/rvm/bin'
