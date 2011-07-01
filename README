@@ -1,1 +1,8 @@
 Cappy is a new rails app hooked up with Capistrano. I use it to test deployments on new servers.
+
+Key Setup
+=========
+
+* Create a deploy user and an app specific key
+* Create an entry in .ssh/config for a github host and specify identity file
+* Add key as a deploy key to your repo
