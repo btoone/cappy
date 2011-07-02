@@ -6,3 +6,4 @@ gem 'sqlite3'
 # Deploy with Capistrano
 gem 'capistrano'
 gem 'capistrano-ext'
+gem 'mysql2'
