@@ -31,6 +31,6 @@ production:
   reconnect: false
   database: myapp_production
   pool: 5
-  username: root
-  password:
+  username: deploy
+  password: s3cr3t
   socket: /tmp/mysql.sock
