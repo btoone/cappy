@@ -16,7 +16,7 @@ set :application, "cappy.com"                         # the name of your website
 
 role :web, "#{application}"
 role :app, "#{application}"
-role :db,  "#{application}"
+role :db,  "#{application}", :primary => true
 
 # git
 
